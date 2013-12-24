@@ -1,0 +1,64 @@
+{
+        "name": "StockTwits",
+        "url": "https://api.stocktwits.com/api/2/oauth",
+        "oauth2": {
+                "authorize": {
+                        "url": "/authorize",
+                        "query": {
+                                "client_id": "{client_id}",
+                                "response_type": "{types}",
+                                "redirect_uri": "{redirect_uri}",
+                                "scope": "{scope}",
+                                "prompt": "{prompt}"    
+                        }
+                },
+                "access_token": {
+                        "url": "/token",
+                        "query": {
+                               "client_id": "{client_id}",
+                               "grant_type": "{types}",
+                               "client_secret": "{client_secret}",
+                               "redirect_uri": "{request_uri}",
+                               "code": "{{code}}"
+                        }
+                },
+                "request": {
+                        "query": {
+                                "access_token": "{{token}}"
+                        }
+                },
+                "parameters": {
+                        "client_secret": "string",
+                        "client_id": "string",
+                        "redirect_uri": "string",
+                        "types": {
+                                "options": {
+                                        "code": "Authentication for Websites & Mobile Web apps using a Server",
+                                        "token": "Authentication for Websites & Mobile Web apps using Javascript"
+                                }
+                        },
+                        "scope": {
+                                "values": {
+                                        "read": "Default, allow to read user, symbol and authenticated streams, read social graph of people and stocks",
+                                        "watch_lists": "Read a users watch lists",
+                                        "publish_watch_lists": "Publish to a users watch lists",
+                                        "publish_messages": "Publish messages for a user",
+                                        "direct_messages": "Read a users direct messages",
+                                        "follow_users": "Follow other users",
+                                        "follow_stocks": "Follow stocks"                                        
+                                },
+                                "separator": ","
+                        },
+                        "prompt":{
+                                "": "Don't always prompt for authorization",
+                                "1": "Always prompt for authorization"
+                        }
+                }
+        },
+        "href": {
+                "keys": "http://stocktwits.com/developers/docs/authentication",
+                "docs": "http://stocktwits.com/developers/docs/api",
+                "apps": "http://stocktwits.com/developers/docs/stocktwits-for-websites",
+                "provider": "http://www.stocktwits.com"
+        }
+}
